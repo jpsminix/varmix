@@ -10,6 +10,11 @@ pipeline {
                 echo 'hola'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "${params.multimarca} World! ${params.zona}"
+                uname -a
+                sh (uname -a)
+                sh ("uname -a")
+                pwd
+                sh (pwd)
             }
         }
     }
