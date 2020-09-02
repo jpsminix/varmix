@@ -1,8 +1,10 @@
 pipeline {
     agent any
+    environment {
+        ENV_NAME = "lol"
+    }    
     parameters {
-        string(name: 'multimarca', defaultValue: 'Hello', description: 'How should I greet the world?')
-        string(name: 'ENV_NAME', defaultValue: 'oops', description: 'DoH!')        
+        string(name: 'multimarca', defaultValue: 'Hello', description: 'How should I greet the world?')  
         choice(name: 'zona', choices: ['one', 'two', 'three'], description: 'No way?')
     }
     stages {
@@ -16,12 +18,12 @@ pipeline {
                 script {
                     if ( multimarca == 'Hello') {
                         echo "SI"
-                        params.ENV_NAME = 'Development'
+                        ENV_NAME = 'Development'
                     } else {
-                        params.ENV_NAME = 'Production'
+                        ENV_NAME = 'Production'
                     }
                 }
-                echo "${params.multimarca} World! ${params.ENV_NAME}"
+                echo "${params.multimarca} World! ${ENV_NAME}"
                 echo "=============================== TEST"
                 echo "=============================== TEST"
                 sh '''
