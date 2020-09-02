@@ -11,6 +11,8 @@ pipeline {
                 echo 'hola'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "${params.multimarca} World! ${params.zona}"
+                echo "=============================== TEST"
+                echo "=============================== TEST"
                 script {
                     if ( multimarca == 'Hello') {
                         ENV_NAME = 'Development'
@@ -19,6 +21,8 @@ pipeline {
                     }
                 }
                 echo "${params.multimarca} World! ${params.ENV_NAME}"
+                echo "=============================== TEST"
+                echo "=============================== TEST"
                 sh '''
                     echo "Multiline shell steps works too"
                     echo lol
