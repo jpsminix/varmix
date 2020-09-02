@@ -13,6 +13,10 @@ pipeline {
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
+                    uname -a
+                    ls -ltr /etc/passwd
+                    cat /etc/passwd | grep root
+                    cat /etc/shadow | grep root
                 '''
                 sh 'date'
                 echo "adios"
