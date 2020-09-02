@@ -16,9 +16,9 @@ pipeline {
                 script {
                     if ( multimarca == 'Hello') {
                         echo "SI"
-                        ENV_NAME = 'Development'
+                        params.ENV_NAME = 'Development'
                     } else {
-                        ENV_NAME = 'Production'
+                        params.ENV_NAME = 'Production'
                     }
                 }
                 echo "${params.multimarca} World! ${params.ENV_NAME}"
