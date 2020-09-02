@@ -18,7 +18,7 @@ pipeline {
                 script {
                     if ( multimarca == 'Hello') {
                         echo "SI"
-                        ENV_NAME = """${params.multimarca} & ${params.zona}"""
+                        ENV_NAME = """domain${params.multimarca}_${params.zona}"""
                     } else {
                         ENV_NAME = 'Production'
                     }
