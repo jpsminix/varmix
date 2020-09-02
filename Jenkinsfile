@@ -10,11 +10,11 @@ pipeline {
                 echo 'hola'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "${params.multimarca} World! ${params.zona}"
+                params.multimarca=1;
+                echo "${params.multimarca} World! ${params.zona}"
                 sh '''
                     echo "Multiline shell steps works too"
-                    ls -lah
-                    uname -a
-                    id
+                    echo lol
                 '''
                 sh 'date'
                 echo "adios"
