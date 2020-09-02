@@ -15,6 +15,7 @@ pipeline {
                 sh ("uname -a")
                 pwd
                 sh (pwd)
+                echo "adios"
             }
         }
     }
