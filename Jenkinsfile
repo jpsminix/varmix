@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
         string(name: 'multimarca', defaultValue: 'Hello', description: 'How should I greet the world?')
-        string(choice: 'zona', choices: ['one', 'two', 'three'], description: 'No way?')
+        choice(name: 'zona', choices: ['one', 'two', 'three'], description: 'No way?')
     }
     stages {
         stage('Test') {
