@@ -15,6 +15,7 @@ pipeline {
                 echo "=============================== TEST"
                 script {
                     if ( multimarca == 'Hello') {
+                        echo "SI"
                         ENV_NAME = 'Development'
                     } else {
                         ENV_NAME = 'Production'
