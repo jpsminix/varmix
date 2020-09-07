@@ -1,4 +1,5 @@
 def a="one", b="two"
+def extravars
 pipeline {
     agent any
     environment {
@@ -50,7 +51,6 @@ pipeline {
         stage('LOL2'){
             steps {
                 echo "${params.multimarca} World! ${ENV_NAME}"
-                def extravars
                 extravars = new HashMap<>(params)
                 echo "${extravars}"
             }
