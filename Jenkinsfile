@@ -2,9 +2,6 @@ pipeline {
     agent any
     environment {
         ENV_NAME = "lol"
-        script {
-            ENV_NAME = "PPEPE"
-        }
     }    
     parameters {
         string(name: 'multimarca', defaultValue: 'Hello', description: 'How should I greet the world?')  
