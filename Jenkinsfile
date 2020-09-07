@@ -19,9 +19,9 @@ pipeline {
                 echo "${params.multimarca} World! ${ENV_NAME}"
                 script {
                     if ( tiene != '') {
-                        ENV_NAME = """domain${ENV_NAME}_${params.zona}"""
+                        ENV_NAME = """domain${params.multimarca}_${params.zona}"""
                     } else {
-                        ENV_NAME = """domain${params.multimarca}"""
+                        ENV_NAME = """domain${ENV_NAME}"""
                     }
                 }
                 echo "${params.multimarca} World! ${ENV_NAME}"
