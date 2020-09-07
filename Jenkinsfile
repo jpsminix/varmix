@@ -1,14 +1,13 @@
+def a="one"
 pipeline {
     agent any
     environment {
         ENV_NAME = "lol"
-        a="one"
-        b="two"
     }    
     parameters {
         string(name: 'multimarca', defaultValue: 'Hello', description: 'How should I greet the world?')  
         string(name: 'tiene', defaultValue: '', description: 'tienes?')  
-        choice(name: 'zona', choices: [${a},'${b}'], description: 'No way?')
+        choice(name: 'zona', choices: [a,'${b}'], description: 'No way?')
     }
     stages {
         stage('Test') {
