@@ -2,11 +2,13 @@ pipeline {
     agent any
     environment {
         ENV_NAME = "lol"
+        a="one"
+        b="two"
     }    
     parameters {
         string(name: 'multimarca', defaultValue: 'Hello', description: 'How should I greet the world?')  
         string(name: 'tiene', defaultValue: '', description: 'tienes?')  
-        choice(name: 'zona', choices: ['one', 'two', 'three'], description: 'No way?')
+        choice(name: 'zona', choices: ['${a}','${b}'], description: 'No way?')
     }
     stages {
         stage('Test') {
@@ -24,7 +26,7 @@ pipeline {
                         ENV_NAME = """domain${ENV_NAME}"""
                     }
                     switch(zona){
-                        case 'one':
+                        case '${a}':
                             ENV_NAME = """one"""
                             break
                         case 'two':
