@@ -8,6 +8,9 @@ pipeline {
         choice(name: 'zona', choices: ['one', 'two', 'three'], description: 'No way?')
     }
     stages {
+        script {
+            ENV_NAME = "New car"
+        }
         stage('Test') {
             steps {
                 echo 'hola'
@@ -15,6 +18,7 @@ pipeline {
                 echo "${params.multimarca} World! ${params.zona}"
                 echo "=============================== TEST"
                 echo "=============================== TEST"
+                echo "${params.multimarca} World! ${ENV_NAME}"
                 script {
                     if ( multimarca == 'Hello') {
                         echo "SI"
@@ -32,6 +36,11 @@ pipeline {
                 '''
                 sh 'date'
                 echo "adios"
+            }
+        }
+        stage('LOL2'){
+            steps {
+                echo "${params.multimarca} World! ${ENV_NAME}"
             }
         }
     }
