@@ -8,9 +8,6 @@ pipeline {
         choice(name: 'zona', choices: ['one', 'two', 'three'], description: 'No way?')
     }
     stages {
-        script {
-            ENV_NAME = "New car"
-        }
         stage('Test') {
             steps {
                 echo 'hola'
