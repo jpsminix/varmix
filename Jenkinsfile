@@ -5,6 +5,7 @@ pipeline {
     }    
     parameters {
         string(name: 'multimarca', defaultValue: 'Hello', description: 'How should I greet the world?')  
+        string(name: 'tiene', defaultValue: '', description: 'tienes?')  
         choice(name: 'zona', choices: ['one', 'two', 'three'], description: 'No way?')
     }
     stages {
@@ -17,11 +18,10 @@ pipeline {
                 echo "=============================== TEST"
                 echo "${params.multimarca} World! ${ENV_NAME}"
                 script {
-                    if ( multimarca == 'Hello') {
-                        echo "SI"
-                        ENV_NAME = """domain${params.multimarca}_${params.zona}"""
+                    if ( tiene != '') {
+                        ENV_NAME = """domain${ENV_NAME}_${params.zona}"""
                     } else {
-                        ENV_NAME = 'Production'
+                        ENV_NAME = """domain${params.multimarca}"""
                     }
                 }
                 echo "${params.multimarca} World! ${ENV_NAME}"
