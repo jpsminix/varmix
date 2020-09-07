@@ -23,6 +23,17 @@ pipeline {
                     } else {
                         ENV_NAME = """domain${ENV_NAME}"""
                     }
+                    switch(zona){
+                        case one:
+                            ENV_NAME="""one"""
+                            break;
+                        case two:
+                            ENV_NAME="""two"""
+                            break;
+                        default:
+                            ENV_NAME="""damn"""
+                            break;
+                    }
                 }
                 echo "${params.multimarca} World! ${ENV_NAME}"
                 echo "=============================== TEST"
