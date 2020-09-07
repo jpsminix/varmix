@@ -24,10 +24,10 @@ pipeline {
                         ENV_NAME = """domain${ENV_NAME}"""
                     }
                     switch(zona){
-                        case one:
+                        case 'one':
                             ENV_NAME = """one"""
                             break
-                        case two:
+                        case 'two':
                             ENV_NAME = """two"""
                             break
                         default:
