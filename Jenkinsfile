@@ -1,4 +1,4 @@
-def a="one"
+def a="one", b="two"
 pipeline {
     agent any
     environment {
@@ -7,7 +7,7 @@ pipeline {
     parameters {
         string(name: 'multimarca', defaultValue: 'Hello', description: 'How should I greet the world?')  
         string(name: 'tiene', defaultValue: '', description: 'tienes?')  
-        choice(name: 'zona', choices: [a,'${b}'], description: 'No way?')
+        choice(name: 'zona', choices: [a,b], description: 'No way?')
     }
     stages {
         stage('Test') {
@@ -28,7 +28,7 @@ pipeline {
                         case '${a}':
                             ENV_NAME = """one"""
                             break
-                        case 'two':
+                        case '${b}':
                             ENV_NAME = """two"""
                             break
                         default:
