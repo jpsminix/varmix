@@ -8,7 +8,7 @@ pipeline {
     parameters {
         string(name: 'multimarca', defaultValue: 'Hello', description: 'How should I greet the world?')  
         string(name: 'tiene', defaultValue: '', description: 'tienes?')  
-        choice(name: 'zona', choices: ['${a}','${b}'], description: 'No way?')
+        choice(name: 'zona', choices: [${a},'${b}'], description: 'No way?')
     }
     stages {
         stage('Test') {
