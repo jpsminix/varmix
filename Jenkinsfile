@@ -51,7 +51,7 @@ pipeline {
         stage('LOL2'){
             steps {
                 echo "${params.multimarca} World! ${ENV_NAME}"
-                #def extravars = new HashMap<>(params)
+                //def extravars = new HashMap<>(params)
                 Map<String, Object> extravars = new HashMap<String, Object>(parameters);
                 echo "${extravars}"
             }
