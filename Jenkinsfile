@@ -52,7 +52,7 @@ pipeline {
             steps {
                 echo "${params.multimarca} World! ${ENV_NAME}"
                 //def extravars = new HashMap<>(params)
-                Map<String, Object> extravars = new HashMap<String, Object>(parameters);
+                Map<> extravars = new HashMap<>(params);
                 echo "${extravars}"
             }
         }
