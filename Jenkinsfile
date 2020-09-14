@@ -1,5 +1,5 @@
 def a="one", b="two"
-def extravars = [:]
+
 pipeline {
     agent any
     environment {
